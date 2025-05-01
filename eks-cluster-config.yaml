@@ -1,0 +1,17 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: ksau-cluster
+  region: us-east-1
+
+nodeGroups:
+  - name: ng-small
+    instanceType: t3.small # By default it creates with m5.large with 2 nodes and my bills were going crazy
+    desiredCapacity: 1
+    minSize: 1
+    maxSize: 2
+    volumeSize: 20
+    ssh:
+      allow: true
+
