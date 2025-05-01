@@ -1,0 +1,23 @@
+labels:
+  app: ksau-web-backend
+  env: dev
+
+container:  
+  name: ksau-web-backend
+  image:
+    name: ksauraj/ksau-web-backend
+    tag: "v1-alpine"
+
+deployment:
+  name: ksau-web-backend-svc
+  replicaCount: 1
+
+service:
+  name: ksau-web-backend-svc
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+
+ingress:
+  name: ksau-web-backend-ing
+  host: aws.ksauraj.eu.org

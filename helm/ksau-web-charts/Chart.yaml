@@ -1,0 +1,6 @@
+apiVersion: v2
+name: ksau-web-charts
+description: A Helm chart for Kubernetes Cluster for hosting ksau-web-backend
+type: application
+version: 0.1.0
+appVersion: "1.0.0"

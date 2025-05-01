@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ksau-web-backend
+    env: dev
+  name: ksau-web-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ksau-web-backend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ksau-web-backend
+    spec:
+      containers:
+      - image: ksauraj/ksau-web-backend:v1-alpine
+        name: ksau-web-backend
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}

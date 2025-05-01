@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: {{ .Values.labels.app }}
+    env: {{ .Values.labels.env }}
+  name: ksau-web-backend
+spec:
+  replicas: {{ .Values.deployment.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.labels.app }}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: {{ .Values.labels.app }}
+    spec:
+      containers:
+      - image: {{ .Values.container.image.name }}:{{ .Values.container.image.tag }}
+        name: {{ .Values.container.name }}
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}
